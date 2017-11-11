@@ -1,6 +1,7 @@
 import pytest
+from test_helper import TestHelper
 
-class TestClass(object):
+class TestClass(TestHelper):
     ''' Sample Class to test pytest basic functionalities '''
     def test_one(self):
 	''' Dummy test '''
@@ -9,8 +10,10 @@ class TestClass(object):
 
     def test_two(self):
 	''' Dummy test '''
-        x = "hello"
-        assert hasattr(x, 'check')
+        x = "h"
+	string="check"
+	err_msg = "Character {} not present in string {}".format(x, string)
+        assert self.check_char_in_string(x, string), err_msg
 
     def test_three(self):
 	''' 
