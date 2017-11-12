@@ -1,7 +1,12 @@
 import pytest
+from base.base import Base
 
 class TestHelper(object):
     ''' Helper methods for sample tests ''' 
+
+    @pytest.fixture(autouse=True)
+    def setup_utils(self):
+        self.base = Base()
 
     def check_char_in_string(self, char, string):
 	''' 

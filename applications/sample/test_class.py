@@ -16,8 +16,8 @@ class TestClass(TestHelper):
         assert self.check_char_in_string(x, string), err_msg
 
     def test_three(self):
-	''' 
+        ''' 
            This test will read input data from JSON file 
            and check if a character is present in a string or not
         '''
-	pass
+        test_info = self.base.read_app_data("info.json")

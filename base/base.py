@@ -1,5 +1,4 @@
 import json
-import yaml
 
 class Base(object):
     ''' Base level methods '''
@@ -11,8 +10,6 @@ class Base(object):
         ''' Reads information from JSON/YAML file and returns a dictionary '''
 
         if data_file.endswith('.json'):
-            test_data = json.loads(data_file)
-        if data_file.endswith('.yaml'):
-            test_data = yaml.safe_load(data_file)
+            test_data = json.loads(open(data_file,'r'))
 
         return test_data
