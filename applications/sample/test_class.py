@@ -11,8 +11,8 @@ class TestClass(TestHelper):
     def test_two(self):
 	''' Dummy test '''
         x = "h"
-	string="check"
-	err_msg = "Character {} not present in string {}".format(x, string)
+        string="check"
+        err_msg = "Character {} not present in string {}".format(x, string)
         assert self.check_char_in_string(x, string), err_msg
 
     def test_three(self):
