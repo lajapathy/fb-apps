@@ -4,12 +4,12 @@ from test_helper import TestHelper
 class TestClass(TestHelper):
     ''' Sample Class to test pytest basic functionalities '''
     def test_one(self):
-	''' Dummy test '''
+        ''' Dummy test '''
         x = "this"
         assert 'h' in x
 
     def test_two(self):
-	''' Dummy test '''
+        ''' Dummy test '''
         x = "h"
         string="check"
         err_msg = "Character {} not present in string {}".format(x, string)
