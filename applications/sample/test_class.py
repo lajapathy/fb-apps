@@ -3,6 +3,7 @@ from test_helper import TestHelper
 
 class TestClass(TestHelper):
     ''' Sample Class to test pytest basic functionalities '''
+    
     def test_one(self):
         ''' Dummy test '''
         x = "this"

@@ -17,7 +17,6 @@ class Base(object):
         	Returns:
         	    Parsed data in dictionary
         '''
-        import pdb; pdb.set_trace()  # breakpoint 98f9d1c0 //
         if td_dir is None:
             td_dir = self.test["case_td_dir"]
 

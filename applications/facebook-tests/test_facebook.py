@@ -1,16 +1,17 @@
 import pytest
+
 from facebook_test_helper import FacebookTestHelper
 
 
 class FacebookTest(FacebookTestHelper):
     ''' Test basic facebook APIs '''
 
-    def test_one(self):
+    def test_one_f(self):
         ''' Dummy test '''
         x = "this"
         assert 'h' in x
 
-    def test_two(self):
+    def test_two_f(self):
         ''' Dummy test '''
         x = "h"
         string="check"
