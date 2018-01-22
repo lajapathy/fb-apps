@@ -1,10 +1,13 @@
 import pytest
 import json
+import sys
+import os
+sys.path.append(os.getcwd()+"/resources")
 
 from access_token import AccessToken
-from resources.graph_api import GraphAPI
+from graph_api import GraphAPI
 
-class ApiClient(Services):
+class ApiClient(object):
     """ Base class for all api client classes of APIC EM. """
 
     def __init__(self, api_client):

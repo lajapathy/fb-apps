@@ -39,7 +39,6 @@ class AccessToken(object):
             pass
         '''
         
-        import pdb; pdb.set_trace()  # breakpoint cf26be4f //
         data = {'grant_type': 'client_credentials', 'client_id': app_id, 'client_secret': app_secret}
         file = requests.post('https://graph.facebook.com/oauth/access_token?', params = data)
         result = file.text.split("=")[1]
