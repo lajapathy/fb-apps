@@ -1,5 +1,10 @@
 import requests
 
+from graph_api_error import GraphAPIError
+
+__all__ = ('FacebookAPI', 'GraphAPI', 'FacebookClientError',
+           'FacebookAuthError', 'FacebookAPIError', 'GraphAPIError')
+
 class GraphAPI(object):
     def __init__(self, access_token=None, headers=None, api_version='v2.6'):
         self.api_url = 'https://graph.facebook.com/'
@@ -9,7 +14,8 @@ class GraphAPI(object):
         self.access_token = access_token
 
         # If there's headers, set them. If not, lets
-        self.headers = headers or {'User-agent': 'Requests-Facebook %s' % __version__}
+        #self.headers = headers or {'User-agent': 'Requests-Facebook %s' % __version__}
+        self.headers = headers
 
     def get(self, endpoint, params=None):
         return self.request(endpoint, params=params)
@@ -29,11 +35,12 @@ class GraphAPI(object):
         if not method in ('get', 'post', 'delete'):
             raise FacebookClientError('Method must be of GET, POST or DELETE')
 
-        params, files = _split_params_and_files(params)
+        params, files = self._split_params_and_files(params)
 
         func = getattr(requests, method)
         try:
             if method == 'get':
+                import pdb; pdb.set_trace()  # breakpoint 1cb4829b //
                 response = func(url, params=params, headers=self.headers)
             else:
                 response = func(url,
@@ -62,3 +69,15 @@ class GraphAPI(object):
 
     def __repr__(self):
         return u'<GraphAPI: %s>' % self.access_token
+
+    def _split_params_and_files(self, params_):
+        params = {}
+        files = {}
+        for k, v in params_.items():
+            if hasattr(v, 'read') and callable(v.read):
+                files[k] = v
+            elif isinstance(v, basestring) or isinstance(v, numeric_types):
+                params[k] = v
+            elif isinstance(v, bool):
+                params[k] = 'true' if v else 'false'
+        return params, files
