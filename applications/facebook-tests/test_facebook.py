@@ -27,4 +27,4 @@ class FacebookTest(FacebookTestHelper):
 
     def test_get_friends_list(self):
         ''' '''
-        self.friends_util.get_all_friends()
+        print(self.get_friends_list())

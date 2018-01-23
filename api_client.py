@@ -25,7 +25,7 @@ class ApiClient(object):
 
         self.access_token_util = AccessToken()
         self.token = self.access_token_util.get_access_token()
-        self.graph_util = GraphAPI(access_token="your_token", version="2.10")
+        self.graph_util = GraphAPI(access_token=self.token, version="2.10")
         self.app_info = json.loads(open("app-info.json",'r'))
         
 

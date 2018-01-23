@@ -16,5 +16,8 @@ class Friends(ApiClient):
         	Returns:
 	    List of IDs of all friends
         '''
+        graph = self.graph_util.get("me/friends")
+        for friend in friends['data']:
+            print "{0} has id {1}".format(friend['name'].encode('utf-8'), friend['id'])
 
-        self.access_token = self.access_token_util.get_access_token()
+        
