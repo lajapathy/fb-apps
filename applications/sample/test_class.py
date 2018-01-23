@@ -22,3 +22,9 @@ class TestClass(TestHelper):
            and check if a character is present in a string or not
         '''
         test_info = self.base.read_app_data("info.json")
+
+    def test_get_friends_list(self):
+        ''' '''
+
+        import pdb; pdb.set_trace()  # breakpoint 2ed48f59 //
+        print(self.get_friends_list())

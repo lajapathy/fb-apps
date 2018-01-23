@@ -1,12 +1,20 @@
 import pytest
-from base.base import Base
 
-class TestHelper(object):
+from base.base import Base
+from services.friends import Friends
+from services.posts import Posts
+from services.user import User
+from api_client import ApiClient
+
+class TestHelper(ApiClient):
     ''' Helper methods for sample tests ''' 
 
     @pytest.fixture(autouse=True)
     def setup_utils(self):
         self.base = Base()
+        self.posts_util = Posts()
+        self.friends_util = Friends()
+        self.user_util = User()
 
     def check_char_in_string(self, char, string):
         ''' 
@@ -20,3 +28,15 @@ class TestHelper(object):
         '''
 	
         return (char in string)
+
+    def get_access_token(self):
+        '''
+        '''
+        self.access_token = self.access_token_util.get_access_token()
+        return self.access_token
+
+    def get_friends_list(self):
+        ''' 
+        '''
+        return self.friends_util.get_all_friends(
+            self.get_access_token())
