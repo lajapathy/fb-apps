@@ -6,7 +6,7 @@ from services.posts import Posts
 from services.user import User
 from api_client import ApiClient
 
-class TestHelper(ApiClient):
+class TestHelper(object):
     ''' Helper methods for sample tests ''' 
 
     @pytest.fixture(autouse=True)
@@ -15,6 +15,7 @@ class TestHelper(ApiClient):
         self.posts_util = Posts()
         self.friends_util = Friends()
         self.user_util = User()
+
 
     def check_char_in_string(self, char, string):
         ''' 
@@ -38,5 +39,4 @@ class TestHelper(ApiClient):
     def get_friends_list(self):
         ''' 
         '''
-        return self.friends_util.get_all_friends(
-            self.get_access_token())
+        return self.friends_util.get_all_friends()

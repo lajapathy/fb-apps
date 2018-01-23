@@ -26,5 +26,4 @@ class TestClass(TestHelper):
     def test_get_friends_list(self):
         ''' '''
 
-        import pdb; pdb.set_trace()  # breakpoint 2ed48f59 //
         print(self.get_friends_list())
