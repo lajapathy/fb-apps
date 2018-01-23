@@ -10,15 +10,6 @@ from graph_api import GraphAPI
 class ApiClient(object):
     """ Base class for all api client classes of APIC EM. """
 
-    def __init__(self, api_client):
-        """Initializer of Apis of APIC EM.
-
-        Args:
-            api_client (Object): ClientManager Object that makes API calls.
-        """
-
-        self.api_client = api_client
-
     @pytest.mark.fixture(autouse=True)
     def setup_client(self):
         ''' Setups up Facebook API client '''
