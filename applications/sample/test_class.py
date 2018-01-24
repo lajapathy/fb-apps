@@ -26,4 +26,4 @@ class TestClass(TestHelper):
     def test_get_friends_list(self):
         ''' '''
 
-        print(self.get_friends_list())
+        friends = self.get_friends_list()

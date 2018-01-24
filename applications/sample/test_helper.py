@@ -6,6 +6,7 @@ from services.posts import Posts
 from services.user import User
 from api_client import ApiClient
 
+
 class TestHelper(object):
     ''' Helper methods for sample tests ''' 
 
@@ -16,13 +17,14 @@ class TestHelper(object):
         self.friends_util = Friends()
         self.user_util = User()
 
-
     def check_char_in_string(self, char, string):
         ''' 
  	Checks whether a char is present in a string or not
+
 	Args:
 	    char: Character to be checked
 	    String: String in which character is present or not
+
 	Returns:
 	    True: If char is present in string
 	    False: Otherwise
@@ -30,13 +32,8 @@ class TestHelper(object):
 	
         return (char in string)
 
-    def get_access_token(self):
-        '''
-        '''
-        self.access_token = self.access_token_util.get_access_token()
-        return self.access_token
-
     def get_friends_list(self):
         ''' 
+            Returns list of friends
         '''
         return self.friends_util.get_all_friends()

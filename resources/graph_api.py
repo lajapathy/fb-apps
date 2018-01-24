@@ -10,7 +10,7 @@ class GraphAPI(object):
         self.api_url = 'https://graph.facebook.com/'
         self.api_version = api_version
         if self.api_version:
-            self.api_url = '%s%s/' % (self.api_url, self.api_version)
+            self.api_url = '%sv%s/' % (self.api_url, self.api_version)
         self.access_token = access_token
 
         # If there's headers, set them. If not, lets
@@ -40,7 +40,6 @@ class GraphAPI(object):
         func = getattr(requests, method)
         try:
             if method == 'get':
-                import pdb; pdb.set_trace()  # breakpoint 1cb4829b //
                 response = func(url, params=params, headers=self.headers)
             else:
                 response = func(url,
