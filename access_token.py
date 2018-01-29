@@ -39,8 +39,8 @@ class AccessToken(object):
     def get_user_access_token(self):
         ''' Returns user access token '''
         #TODO(lajju) - Replace this with a dynamic way
-        user_access_token = ("EAABZBoaI7osQBAJxH9gfYqGKeZAZAPGResdZCU2PuNafOZAiIZB5ZB3ZAyvzuvdHDJXCnbb"
-        "5AGaNq75ZBEaYZCKZCIs2ZBR8IJ8ywpaZBMBZCGTOic5EZAlsy2DtqiBzfK0DWnQmMQ7xka9mNNpRC3sjIul1BJKe"
-        "Xe0KQkYgFxpQ0bvoYdVyNTAdhDnnwoxZCsQwbkZANarwZD")
+        user_access_token = ("EAACEdEose0cBAKqbZCLpd0wqp261Mh3COBOR0ZBNhW317p94FZBMds4Xne"
+            "QM26MAGq0CxjgmSfqsZA95WjSH5z1hSwDbGOe1DiD6m6JsP1ebHDtw8iv9b"
+            "aC7i72WFY3dek2K6Ajlov6anxN4FHZBXdjUDEPPuDdTli7CD1fYBvNsRezLtWTMKqYxM9LgYK0UZD")
 
         return user_access_token

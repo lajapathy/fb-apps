@@ -29,6 +29,7 @@ class GraphAPI(object):
     def request(self, endpoint, method='GET', params=None):
         params = params or {}
 
+        import pdb; pdb.set_trace()  # breakpoint ca8e9d2c //
         url = self.api_url + endpoint + '?access_token=' + self.access_token
         method = method.lower()
 
